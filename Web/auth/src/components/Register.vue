@@ -202,9 +202,9 @@ export default {
         method: 'post',
         url: this.userInfoApi,
         data: {
-          'user_id': this.userId,
-          'user_password': this.userPassword,
-          'user_email': this.userEmail
+          user_id: this.userId,
+          user_password: this.userPassword,
+          user_email: this.userEmail
         }
       }).then((response) => {
         if (response.data.code === 202) {
@@ -275,10 +275,6 @@ export default {
   height: 8px;
   border: solid 0.5px #fbd000;
   background-color: #fbd000;
-  }
-
-  .Nextbt {
-    background: url(../assets/img/Next.png) no-repeat
   }
 
   .register_panel .register_title {
