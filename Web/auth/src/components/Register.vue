@@ -77,7 +77,7 @@
         <input class="bt" @click="addUser" type="submit" value="Register">
       </div>
 
-      <el-button class="Nextbt" @click="next" v-if="active<4">NEXT</el-button>
+      <el-button class="nextbt" @click="next" v-if="active<4">NEXT</el-button>
 
     </div>
   </div>
@@ -323,6 +323,10 @@ export default {
     color: #ffffff;
     background: #379df6;
     cursor: pointer;
+  }
+
+  .register_panel .nextbt {
+    background: url(../assets/img/Next.png) no-repeat
   }
 
   .register_panel .bt:hover {
