@@ -77,7 +77,7 @@
         <input class="bt" @click="addUser" type="submit" value="Register">
       </div>
 
-      <el-button style="Nextbt" @click="next" v-if="active<4">NEXT</el-button>
+      <el-button class="Nextbt" @click="next" v-if="active<4">NEXT</el-button>
 
     </div>
   </div>
