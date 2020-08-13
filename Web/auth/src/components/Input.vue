@@ -106,7 +106,7 @@ export default {
     background-color: #333333;
     transform: translate(-50%, -50%);
     /* background: #fff; */
-    border-radius: 6px;
+    border-radius: 5px;
     overflow: hidden;
   }
 

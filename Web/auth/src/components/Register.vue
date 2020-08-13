@@ -1,13 +1,9 @@
 <template>
   <div class="register_box">
-    <router-link to="/input">
-      <div class="login_close"></div>
-    </router-link>
     <div class="register_panel">
-      <div class="register_title">
-        <img src="../assets/img/logo.png" alt="">
-      </div>
-
+      <router-link to="/input">
+        <div class="login_close"></div>
+      </router-link>
       <el-steps :space="200" :active="0">
         <el-step></el-step>
         <el-step></el-step>
@@ -15,16 +11,18 @@
         <el-step></el-step>
         <el-step></el-step>
       </el-steps>
-
+      <div class="register_title">
+        <img src="../assets/img/logo.png" alt="">
+      </div>
       <!--      Step 1: Identity-->
       <div v-if="active===0">
-        <label style="margin-top: 50px">Identity：</label>
-        <input v-model="userId" type="tel" pattern="^\d{11}$" title="Please Enter Identity" required>
+        <label class="message-tag1">Create a display name for your iPersona Account, this will be the name everyone else can see.</label>
+        <input v-model="userId" type="text" placeholder="Display Name" pattern="^\d{11}$" title="Please Enter Identity" required>
       </div>
       <!--      Step 2 : Email-->
       <div v-if="active===1">
-        <label style="margin-top: 50px">Email：</label>
-        <input v-model="userEmail" type="tel" pattern="^\d{11}$" title="Please Enter Email" required>
+        <label class="message-tag1">Please link a email to your iPersona account.</label>
+        <input v-model="userEmail" type="tel" placeholder="Your Email Address" pattern="^\d{11}$" title="Please Enter Email" required>
       </div>
 
       <!--      Step 3 : Email Verification-->
@@ -77,7 +75,7 @@
         <input class="bt" @click="addUser" type="submit" value="Register">
       </div>
 
-      <el-button class="nextbt" @click="next" v-if="active<4">NEXT</el-button>
+      <el-button class="nextbt" @click="next" v-if="active<4"></el-button>
 
     </div>
   </div>
@@ -232,41 +230,41 @@ export default {
   .register_box {
     z-index: 99;
     position: absolute;
-    width: 380px;
+    width: 350px;
     height: 540px;
     top: 50%;
     left: 50%;
     margin-left: -190px;
     margin-top: -270px;
-    border-radius: 6px;
     background-color: #333333;
-    box-shadow: 0 2px 10px #999;
   }
 
-  .login_close {
+   .login_close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0px;
+    right: 0px;
     width: 51px;
     height: 51px;
-    background: url(../assets/img/qrcode2.png) no-repeat right top;
+    background: url(../assets/img/pcinput2.png) no-repeat right top;
     background-size: 100% 100%;
     border-top-right-radius: 5px;
     cursor: pointer;
     z-index: 99;
   }
-
   /*登录*/
   .register_panel {
-    position: absolute;
+    position: relative;
+    display: block;
     top: 50%;
     left: 50%;
-    width: 270px;
-    height: 540px;
-    padding: 0 55px;
+    margin: auto;
+    width: 375px;
+    height: 667px;
+    padding: 0 0px;
+    background-color: #333333;
     transform: translate(-50%, -50%);
     /* background: #fff; */
-    border-radius: 6px;
+    border-radius: 5px;
     overflow: hidden;
   }
 
@@ -282,38 +280,43 @@ export default {
   }
 
   .register_panel .register_title img {
-    margin-top: 140px;
+    margin-top: 90px;
     height: 21.5px;
     width: 251px;
     padding: 10px;
   }
 
   .register_panel .register_title p {
-    margin-top: 15px;
     color: #999999;
     font-size: 15px;
   }
 
   .register_panel label {
-    display: block;
-    font-size: 12px;
-    line-height: 18px;
-    color: #a9a8a5;
-    margin-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.21px;
+    text-align: center;
+    color: #b2b2b2;
   }
 
   .register_panel input {
-    display: inline;
-    height: 42px;
-    padding: 0 5%;
+    display: block;
+    margin-top: 55.5px;
+    margin: auto;
+    padding: 0 0;
     line-height: 42px;
     font-size: 14px;
-    color: #333333;
-    border-radius: 4px;
+    color: #b2b2b2;
     outline: 0;
     border: 0;
-    width: 90%;
-    background: #f1f1f1;
+    width: 345px;
+    height: 44px;
+    text-align: center;
+    background-color: #444444;
   }
 
   /* 按钮 */
@@ -326,13 +329,30 @@ export default {
   }
 
   .register_panel .nextbt {
-    background: url(../assets/img/Next.png) no-repeat
+    width: 60px;
+    height: 60px;
+    background: url(../assets/img/Next.png) center no-repeat;
+    display:block;
+    margin:auto;
+    margin-top: 128.5px;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    border: 0;
   }
 
   .register_panel .bt:hover {
     background-color: #2f86f6;
   }
 
+  .message-tag1 {
+    display: block;
+    margin: auto;
+    margin-top: 55.5px;
+    width: 255px;
+    height: 120px;
+  }
   ul {
     padding-left: 20px;
     display: flex;
