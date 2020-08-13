@@ -4,6 +4,12 @@
       <router-link to="/input">
         <div class="login_close"></div>
       </router-link>
+      <!-- <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div> -->
       <!-- <el-steps :space="4" :active="0">
         <el-step class="Oval"></el-step>
         <el-step></el-step>
@@ -52,7 +58,7 @@
 
       <!--      Step 4 : Password-->
       <div v-if="active===3">
-        <label>Password：</label>
+        <label class="message-tag1">Please enter your password</label>
         <div class="input_container">
           <ul>
             <li v-bind:class="{ is_valid: contains_eight_characters }">8 Characters</li>
@@ -270,10 +276,20 @@ export default {
   }
 
   .Oval {
-  width: 8px;
-  height: 8px;
-  border: solid 0.5px #fbd000;
-  background-color: #fbd000;
+    width: 8px;
+    height: 8px;
+    border: solid 0.5px #fbd000;
+    background-color: #fbd000;
+  }
+
+  .step {
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
   }
 
   .register_panel .register_title {
@@ -334,9 +350,12 @@ export default {
     width: 60px;
     height: 60px;
     background: url(../assets/img/Next.png) center no-repeat;
-    display:block;
+    position: absolute;
+    top:484px;
+    left:154.5px;
+    /* display:block;
     margin:auto;
-    margin-top: 128.5px;
+    margin-top: 128.5px; */
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
