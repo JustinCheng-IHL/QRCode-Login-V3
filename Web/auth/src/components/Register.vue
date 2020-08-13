@@ -359,7 +359,7 @@ export default {
     background-color: #444444;
   }
   .register_panel .bt:hover {
-    background-color: #2f86f6;
+    background-color: #faed4b;
   }
 
   .message-tag1 {
