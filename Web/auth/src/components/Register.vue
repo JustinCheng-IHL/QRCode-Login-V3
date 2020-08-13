@@ -40,11 +40,11 @@
 <!--          </el-form-item>-->
 <!--        </el-form>-->
 
-        <label style="margin-top: 10px">Email：</label>
+        <!-- <label style="margin-top: 10px">Email：</label>
         <input v-model="userEmail" type="tel" pattern="^\d{11}$" title="Please Enter Email" required>
-        <input class="bt" @click="getCode" type="submit" value="Get Token" style="margin-top: 10px">
-        <label style="margin-top: 10px">Token：</label>
-        <input v-model="code" type="tel" pattern="^\d{11}$" title="Please Enter Token" required>
+        <input class="bt" @click="getCode" type="submit" value="Get Token" style="margin-top: 10px"> -->
+        <label class="message-tag1">We have send you a 6 digit code to verify your email address. Please input your digits below. </label>
+        <input v-model="code" type="tel" placeholder="Your 6-digit code" pattern="^\d{11}$" title="Please Enter Token" required>
         <input class="bt" @click="verifyToken" type="submit" value="Verify" style="margin-top: 10px">
 
       </div>
@@ -64,13 +64,13 @@
               <path class="checkmark" v-bind:class="{ checked: valid_password }" d="M10,50 l25,40 l95,-70" />
             </svg>
           </div>
-          <password v-model="userPassword" type="password" @input="checkPassword" class="password_first_input" title="Please Enter Password" autocomplete="off" :secureLength="secureLength" required></password>
+          <password v-model="userPassword" type="password" aria-placeholder="Your Password" class="password_first_input" @input="checkPassword"  title="Please Enter Password" autocomplete="off" :secureLength="secureLength" required></password>
         </div>
       </div>
 
       <!--      Step 5 : Confirm Password-->
       <div v-if="active===4">
-        <label>Confirm Password：</label>
+        <label class="message-tag1">Please confirm your password</label>
         <input v-model="passwordConfirm" type="password" title="Please Confirm Password" required>
         <input class="bt" @click="addUser" type="submit" value="Register">
       </div>
@@ -309,7 +309,7 @@ export default {
     margin: auto;
     padding: 0 0;
     line-height: 42px;
-    font-size: 14px;
+    font-size: 1em;
     color: #b2b2b2;
     outline: 0;
     border: 0;
@@ -322,9 +322,10 @@ export default {
   /* 按钮 */
   .register_panel .bt {
     margin-top: 35px;
-    width: 100%;
-    color: #ffffff;
-    background: #379df6;
+    width: 120px;
+    height: 40px;
+    color: #444444  ;
+    background: #fbd000;
     cursor: pointer;
   }
 
@@ -342,6 +343,21 @@ export default {
     border: 0;
   }
 
+  .password_first_input {
+    display: block;
+    margin-top: 55.5px;
+    margin: auto;
+    padding: 0 0;
+    line-height: 42px;
+    font-size: 20px;
+    color: #b2b2b2;
+    outline: 0;
+    border: 0;
+    width: 345px;
+    height: 44px;
+    text-align: center;
+    background-color: #444444;
+  }
   .register_panel .bt:hover {
     background-color: #2f86f6;
   }
@@ -381,7 +397,7 @@ export default {
     position: relative;
     padding: 3px;
     border-radius: 6px;
-    background: #FFF;
+    background: #444444;
   }
 
   input[type="password"]:focus {
