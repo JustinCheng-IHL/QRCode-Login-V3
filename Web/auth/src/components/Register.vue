@@ -4,13 +4,14 @@
       <router-link to="/input">
         <div class="login_close"></div>
       </router-link>
-      <el-steps :space="200" :active="0">
+      <!-- <el-steps :space="4" :active="0">
+        <el-step class="Oval"></el-step>
         <el-step></el-step>
         <el-step></el-step>
         <el-step></el-step>
         <el-step></el-step>
-        <el-step></el-step>
-      </el-steps>
+      </el-steps> -->
+      <div id="pageIndicator" class="ui-page-indicator"></div>
       <div class="register_title">
         <img src="../assets/img/logo.png" alt="">
       </div>
